@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Taking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./output.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <style>
+        .title-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .normal-font {
+            font-family: 'Share Tech Mono', cursive;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-black to-gray-900 text-white flex flex-col min-h-screen overflow-x-hidden">
+
+    <!-- Header -->
+    <header
+        class="bg-gray-800 shadow-lg p-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <h1 class="text-2xl font-semibold title-font">MOODYYY</h1>
+        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2">
+            <svg class="w-10 h-10 text-gray-400 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linejoin="round" stroke-width="2"
+                    d="M20 16v-4a8 8 0 1 0-16 0v4m16 0v2a2 2 0 0 1-2 2h-2v-6h2a2 2 0 0 1 2 2ZM4 16v2a2 2 0 0 0 2 2h2v-6H6a2 2 0 0 0-2 2Z" />
+            </svg>
+        </div>
+        <nav class="w-full md:w-auto mt-4 md:mt-0">
+            <ul class="flex flex-col md:flex-row justify-center md:justify-end space-y-2 md:space-y-0 md:space-x-6">
+                <li><a href="#" class="hover:text-gray-400 normal-font">START</a></li>
+                <li><a href="#" class="hover:text-gray-400 normal-font">ABOUT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main class="flex-grow flex flex-col justify-center items-center text-center px-4">
+        <p class="text-2xl md:text-6xl text-gray-400 normal-font max-w-[90%] md:max-w-3xl">
+            Look at the camera and be real, let us do our magic.
+        </p>
+        <button
+            class="mt-10 px-8 py-3 border-2 border-white text-white text-lg normal-font rounded-lg shadow-md transition-all hover:bg-white hover:text-black">
+            Click Photo
+        </button>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-6 mt-12 text-center">
+        <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-12 text-gray-400">
+            <span>About</span>
+            <span>Creators</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
