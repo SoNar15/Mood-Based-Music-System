@@ -1,8 +1,0 @@
-keras
-flask
-flask-cors
-tensorflow
-numpy
-opencv-python
-mediapipe
-
