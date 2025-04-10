@@ -2,157 +2,113 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOODYYY - music</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="./output.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOODYYY - music</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="./output.css" rel="stylesheet" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
 
-    <style>
-        .title-font {
-            font-family: 'Press Start 2P', cursive;
-        }
+  <style>
+    .title-font {
+      font-family: 'Press Start 2P', cursive;
+    }
 
-        .normal-font {
-            font-family: 'Share Tech Mono', cursive;
-        }
+    .normal-font {
+      font-family: 'Share Tech Mono', monospace;
+    }
 
-        .poppins-font {
-            font-family: 'Poppins', cursive;
-        }
-    </style>
+    .poppins-font {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
 </head>
 
 <body class="bg-gradient-to-b from-black to-gray-900 text-white flex flex-col min-h-screen overflow-x-hidden">
 
-    <!-- Header -->
-    <header
-        class="flex flex-col items-center p-6 bg-gray-800 shadow-lg text-center md:flex-row md:justify-between md:text-left">
-        <h1 class="text-2xl font-semibold title-font">MOODY</h1>
-        <nav class="mt-4 md:mt-0">
-            <ul class="flex flex-col items-center md:flex-row md:space-x-6">
-                <li><a href="#" class="hover:text-gray-400 normal-font">START</a></li>
-                <li><a href="#" class="hover:text-gray-400 normal-font">ABOUT</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header class="flex flex-col items-center p-6 bg-gray-800 shadow-lg text-center md:flex-row md:justify-between md:text-left">
+    <h1 class="text-2xl font-semibold title-font">MOODY</h1>
+    <nav class="mt-4 md:mt-0">
+      <ul class="flex flex-col items-center md:flex-row md:space-x-6">
+        <li><a href="#" class="hover:text-gray-400 normal-font">START</a></li>
+        <li><a href="#" class="hover:text-gray-400 normal-font">ABOUT</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Main section -->
-    <main class="flex-grow flex flex-col items-center justify-center px-4 space-y-12">
-        <!-- Emotion Display -->
-        <div class="flex flex-col mt-40 mb-32 items-center space-y-6 bg-gray-800 p-11 rounded-2xl shadow-lg">
-            <img src="smiley-icon.svg" alt="Happy Emoji" class="w-20 h-20 rounded-full">
-            <p class="text-2xl normal-font text-white">You are feeling <strong>HAPPY</strong></p>
+  <!-- Main section -->
+  <main class="flex-grow flex flex-col items-center justify-center px-4 space-y-12">
+    <!-- Emotion Display -->
+    <div class="flex flex-col mt-40 mb-32 items-center space-y-6 bg-gray-800 p-11 rounded-2xl shadow-lg">
+      <img src="smiley-icon.svg" alt="Happy Emoji" class="w-20 h-20 rounded-full">
+      <p class="text-2xl normal-font text-white">You are feeling <strong>HAPPY</strong></p>
+    </div>
+
+    <!-- Retake Option -->
+    <div class="text-center">
+      <p class="text-lg text-gray-400 normal-font">Don't think this is what you are feeling? Let's check again.</p>
+      <button class="mt-4 px-6 py-3 border-2 border-white text-white normal-font text-lg font-medium rounded-lg shadow-md transition-all hover:bg-white hover:text-black">
+        Retake Photo
+      </button>
+    </div>
+
+    <!-- Songs List -->
+    <div class="w-full max-w-4xl">
+      <h2 class="text-left text-white text-2xl mb-4">Songs:</h2>
+      <div class="bg-gray-800 rounded-xl p-2 space-y-4 shadow-lg">
+        <div id="songs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Songs will be loaded here dynamically -->
         </div>
+      </div>
+    </div>
+  </main>
 
-        <!-- Retake Option -->
-        <div class="text-center">
-            <p class="text-lg text-gray-400 normal-font">Don't think this is what you are feeling? Let's check again.
-            </p>
-            <button
-                class="mt-4 px-6 py-3 border-2 border-white text-white normal-font text-lg font-medium rounded-lg shadow-md transition-all hover:bg-white hover:text-black">
-                Retake Photo
-            </button>
-        </div>
+  <!-- Footer -->
+  <footer class="bg-gray-800 p-6 mt-12 text-center">
+    <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-12 text-gray-400">
+      <span>About</span>
+      <span>Creators</span>
+    </div>
+  </footer>
 
-        <!-- Songs List -->
-        <div class="w-full max-w-4xl">
-            <h2 class="text-left text-white text-2xl mb-4">Songs:</h2>
-            <div class="bg-gray-800 rounded-xl p-2 space-y-4 shadow-lg">
-                <!-- Song Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div class="flex items-center p-4 bg-gray-900 rounded-lg poppins-font">
-                        <img src="song thumbnails/happy/mere bina.jpg" alt="Song Thumbnail"
-                            class="w-16 h-16 rounded-lg">
-                        <div class="ml-4">
-                            <p class="text-white text-lg font-semibold">Mere Bina</p>
-                            <p class="text-gray-400 text-sm">Pritam</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-4 bg-gray-900 rounded-lg poppins-font">
-                        <img src="song thumbnails/happy/mere bina.jpg" alt="Song Thumbnail"
-                            class="w-16 h-16 rounded-lg">
-                        <div class="ml-4">
-                            <p class="text-white text-lg font-semibold">Mere Bina</p>
-                            <p class="text-gray-400 text-sm">Pritam</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-4 bg-gray-900 rounded-lg poppins-font">
-                        <img src="song thumbnails/happy/mere bina.jpg" alt="Song Thumbnail"
-                            class="w-16 h-16 rounded-lg">
-                        <div class="ml-4">
-                            <p class="text-white text-lg font-semibold">Mere Bina</p>
-                            <p class="text-gray-400 text-sm">Pritam</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-4 bg-gray-900 rounded-lg poppins-font">
-                        <img src="song thumbnails/happy/mere bina.jpg" alt="Song Thumbnail"
-                            class="w-16 h-16 rounded-lg">
-                        <div class="ml-4">
-                            <p class="text-white text-lg font-semibold">Mere Bina</p>
-                            <p class="text-gray-400 text-sm">Pritam</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-4 bg-gray-900 rounded-lg poppins-font">
-                        <img src="song thumbnails/happy/mere bina.jpg" alt="Song Thumbnail"
-                            class="w-16 h-16 rounded-lg">
-                        <div class="ml-4">
-                            <p class="text-white text-lg font-semibold">Mere Bina</p>
-                            <p class="text-gray-400 text-sm">Pritam</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-4 bg-gray-900 rounded-lg poppins-font">
-                        <img src="song thumbnails/happy/mere bina.jpg" alt="Song Thumbnail"
-                            class="w-16 h-16 rounded-lg">
-                        <div class="ml-4">
-                            <p class="text-white text-lg font-semibold">Mere Bina</p>
-                            <p class="text-gray-400 text-sm">Pritam</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-4 bg-gray-900 rounded-lg poppins-font">
-                        <img src="song thumbnails/happy/mere bina.jpg" alt="Song Thumbnail"
-                            class="w-16 h-16 rounded-lg">
-                        <div class="ml-4">
-                            <p class="text-white text-lg font-semibold">Mere Bina</p>
-                            <p class="text-gray-400 text-sm">Pritam</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-4 bg-gray-900 rounded-lg poppins-font">
-                        <img src="song thumbnails/happy/mere bina.jpg" alt="Song Thumbnail"
-                            class="w-16 h-16 rounded-lg">
-                        <div class="ml-4">
-                            <p class="text-white text-lg font-semibold">Mere Bina</p>
-                            <p class="text-gray-400 text-sm">Pritam</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-4 bg-gray-900 rounded-lg poppins-font">
-                        <img src="song thumbnails/happy/mere bina.jpg" alt="Song Thumbnail"
-                            class="w-16 h-16 rounded-lg">
-                        <div class="ml-4">
-                            <p class="text-white text-lg font-semibold">Mere Bina</p>
-                            <p class="text-gray-400 text-sm">Pritam</p>
-                        </div>
-                    </div>
-                </div>
+  <!-- Script to load songs -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const mood = urlParams.get('mood') || 'happy'; // fallback to happy
+
+    async function fetchSongs() {
+      try {
+        const res = await fetch(`http://localhost:5000/api/songs/${mood}`);
+        const songs = await res.json();
+
+        const container = document.querySelector('#songs-grid');
+        container.innerHTML = '';
+
+        songs.forEach(song => {
+          const card = document.createElement('div');
+          card.className = "flex items-center p-4 bg-gray-900 rounded-lg poppins-font";
+          card.innerHTML = `
+            <img src="${song.thumbnail_url}" alt="Song Thumbnail" class="w-16 h-16 rounded-lg">
+            <div class="ml-4">
+              <p class="text-white text-lg font-semibold">${song.title}</p>
+              <p class="text-gray-400 text-sm">${song.artist}</p>
             </div>
-        </div>
-    </main>
+          `;
+          container.appendChild(card);
+        });
+      } catch (err) {
+        console.error('Failed to load songs:', err);
+      }
+    }
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 p-6 mt-12 text-center">
-        <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-12 text-gray-400">
-            <span>About</span>
-            <span>Creators</span>
-        </div>
-    </footer>
+    fetchSongs();
+  </script>
 </body>
 
 </html>
