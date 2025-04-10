@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>ESP32 Dynamic Stream</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #111;
+            font-family: sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        iframe {
+            border: none;
+            width: 90%;
+            max-width: 800px;
+            aspect-ratio: 16 / 9;
+            margin-top: 80px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+            border: 4px solid #333;
+            border-radius: 12px;
+            background: black;
+            display: none;
+        }
+
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 12px 20px;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #000;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 8px 12px;
+            font-size: 1rem;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            background-color: #444;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+
+    <div id="controls">
+        <button onclick="showStream()">Show Stream</button>
+        <button onclick="capturePhoto()">Capture Photo</button>
+    </div>
+
+    <iframe id="stream" src=""></iframe>
+
+    <!-- Hidden elements for capture -->
+    <canvas id="hiddenCanvas" width="640" height="480" style="display: none;"></canvas>
+    <img id="hiddenImg" style="display: none;" crossorigin="anonymous" />
+
+    <script>
+        async function showStream() {
+            try {
+                const res = await fetch('/set-ip', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ ip: '192.168.107.6' }) // hardcoded for now
+                });
+
+                if (res.ok) {
+                    document.getElementById('stream').src = '/esp-stream';
+                    document.getElementById('stream').style.display = 'block';
+                } else {
+                    alert("Failed to set IP");
+                }
+            } catch (err) {
+                alert("Error communicating with server");
+                console.error(err);
+            }
+        }
+
+        function capturePhoto() {
+            const hiddenImg = document.getElementById('hiddenImg');
+            const canvas = document.getElementById('hiddenCanvas');
+            const ctx = canvas.getContext('2d');
+
+            hiddenImg.src = `http://${location.hostname}:3000/capture-photo`;  // ✅ We'll create this endpoint
+
+
+            hiddenImg.onload = () => {
+                ctx.drawImage(hiddenImg, 0, 0, canvas.width, canvas.height);
+
+                canvas.toBlob(blob => {
+                    const formData = new FormData();
+                    formData.append('photo', blob, 'capture.jpg');
+
+                    fetch('/upload-photo', {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(res => res.text())
+                        .then(msg => alert(msg))
+                        .catch(err => alert('Upload error: ' + err.message));
+                }, 'image/jpeg', 0.95);
+            };
+
+            hiddenImg.onerror = () => {
+                alert("Failed to load image for capture. Stream may be unavailable.");
+            };
+        }
+    </script>
+</body>
+
+</html>

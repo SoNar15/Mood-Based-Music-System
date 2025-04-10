@@ -51,9 +51,29 @@
             Look at the camera and be real, let us do our magic.
         </p>
         <button
-            class="mt-10 px-8 py-3 border-2 border-white text-white text-lg normal-font rounded-lg shadow-md transition-all hover:bg-white hover:text-black">
-            Click Photo
-        </button>
+    onclick="clickPhoto()"
+    class="mt-10 px-8 py-3 border-2 border-white text-white text-lg normal-font rounded-lg shadow-md transition-all hover:bg-white hover:text-black">
+    Click Photo
+</button>
+
+<script>
+  async function clickPhoto() {
+    try {
+      const res = await fetch('http://localhost:5000/api/photo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }
+      });
+
+      const data = await res.json();
+      const mood = data.mood;
+      // Redirect to songs page with mood query param
+      window.location.href = `music.html?mood=${mood}`;
+    } catch (err) {
+      console.error('Photo error:', err);
+    }
+  }
+</script>
+
     </main>
 
     <!-- Footer -->
