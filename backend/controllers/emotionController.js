@@ -12,7 +12,7 @@ export const detectEmotion = async (req, res) => {
       __dirname,
       "..",
       "python",
-      "detect_emotion.py"
+      "emotion_detector.py"
     );
 
     const pythonProcess = spawn("python", [pythonScriptPath]);
