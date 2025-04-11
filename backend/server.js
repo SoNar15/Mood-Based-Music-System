@@ -32,6 +32,8 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use("/api/emotion", emotionRoutes);
 
+app.use("/songs", express.static(path.join(__dirname, "songs")));
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "starter.html"));
 });
