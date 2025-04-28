@@ -117,7 +117,7 @@
     </header>
 
     <!-- About Page Content -->
-    <section class="h-screen flex flex-col justify-center items-center px-6 md:px-16" id="section--1">
+    <section class="h-[65vh] flex flex-col justify-center items-center px-6 md:px-16" id="section--1">
         <div class="text-center mb-10">
             <h2 class="text-3xl md:text-5xl font-bold title-font mb-4">About MOODYYY</h2>
             <p class="text-xl md:text-2xl text-gray-400 normal-font">
@@ -127,16 +127,21 @@
     </section>
 
     <!-- First Section: What is MOODYYY? -->
-    <section class="h-auto flex items-center justify-center px-6 md:px-16" id="section--2">
+    <section class="h-[70vh] flex items-center justify-center px-6 md:px-16" id="section--2">
         <div class="max-w-7xl w-full flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-40">
             <!-- Left Side: Box with Title & Description -->
             <div class="bg-gray-800 text-white p-8 md:p-12 rounded-2xl shadow-lg max-w-lvw box-content">
                 <h2 class="text-3xl md:text-5xl font-bold mb-16 title-font">What is MOODYYY?</h2>
                 <p class="text-lg md:text-xl text-gray-300 mb-3 normal-font">
-                    MOODYYY is an AI-powered music recommendation system that tunes into your emotions! 🎵✨ By capturing
-                    your photo using computer vision and analyzing your facial expressions, MOODYYY selects songs that
-                    match your mood. Whether you're happy, sad, relaxed, or energized, it curates the perfect playlist
-                    for you.
+                    Moodyyy is a mood-based music recommendation system that tunes into your emotions to enhance your
+                    listening experience. Using computer vision and a custom-trained CNN model, it analyzes facial
+                    expressions captured by an ESP32-CAM module and detects emotions in real-time. Based on your mood —
+                    whether you're happy, sad, angry, or anything in between — Moodyyy suggests curated songs tailored
+                    to how you feel.
+                    The system combines a smooth HTML and Tailwind CSS frontend with a robust Node.js and Express.js
+                    backend, seamlessly connecting emotion detection with personalized music recommendations. Moodyyy
+                    bridges human emotions and technology, creating a more personal and empathetic way to experience
+                    music.
                 </p>
                 <p class="text-lg md:text-xl text-gray-300 normal-font">
                     Just sit back, relax, and let the music flow as MOODYYY delivers a tailored listening experience.
@@ -144,21 +149,15 @@
             </div>
 
             <!-- Right Side: Temporary Image -->
-            <div class="w-full md:w-1/2 flex justify-center">
-                <img src="listening_music.jpg" alt="Temporary Image"
-                    class="rounded-lg shadow-lg w-full md:w-auto md:max-w-md md:h-auto object-cover image-content">
-            </div>
+
         </div>
     </section>
 
     <!-- Second Section: How It Works -->
-    <section class="h-screen flex items-center justify-center px-6 md:px-16 " id="section--3">
+    <section class="h-[70vh] flex items-center justify-center px-6 md:px-16 " id="section--3">
         <div class="max-w-7xl w-full flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-40">
             <!-- left Side: Temporary Image -->
-            <div class="w-full md:w-1/2 flex justify-center">
-                <img src="listening_music.jpg" alt="Temporary Image"
-                    class="rounded-lg shadow-lg w-full md:w-auto md:max-w-md md:h-auto object-cover image-content">
-            </div>
+
             <!-- right Side: Box with Title & Description -->
             <div class="bg-gray-800 text-white p-8 md:p-12 rounded-2xl shadow-lg max-w-lvw box-content">
                 <h2 class="text-3xl md:text-5xl font-bold mb-16 title-font">How Does It Work?</h2>
@@ -178,7 +177,7 @@
     </section>
 
     <!-- Third Section: Future Scope -->
-    <section class="h-screen flex items-center justify-center px-6 md:px-16" id="section--4">
+    <section class="h-[70vh] flex items-center justify-center px-6 md:px-16" id="section--4">
         <div class="max-w-7xl w-full flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-40">
             <!-- Left Side: Box with Title & Description -->
             <div class="bg-gray-800 text-white p-8 md:p-12 rounded-2xl shadow-lg max-w-lvw box-content">
@@ -195,10 +194,7 @@
             </div>
 
             <!-- Right Side: Temporary Image -->
-            <div class="w-full md:w-1/2 flex justify-center">
-                <img src="listening_music.jpg" alt="Temporary Image"
-                    class="rounded-lg shadow-lg w-full md:w-auto md:max-w-md md:h-auto object-cover image-content">
-            </div>
+
         </div>
     </section>
 
