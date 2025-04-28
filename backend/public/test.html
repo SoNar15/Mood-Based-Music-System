@@ -107,15 +107,14 @@
         </div>
         <nav class="w-full md:w-auto text-center mt-4 md:mt-0 header-nav">
             <ul class="flex justify-center md:justify-end space-x-6">
-                <li><a href="photo_take.html" class="hover:text-gray-400 normal-font">START</a></li>
-                <li><a href="about.html" class="hover:text-gray-400 normal-font">ABOUT</a></li>
-                <li><a href="creator.html" class="hover:text-gray-400 normal-font">CREATORS</a></li>
+                <li><a href="#" class="hover:text-gray-400 normal-font">START</a></li>
+                <li><a href="#" class="hover:text-gray-400 normal-font">ABOUT</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Main Content -->
-    <section class="h-screen flex flex-col justify-center items-center" id="section--1">
+    <section class="h-screen flex flex-col justify-center items-center">
         <main class="flex-grow flex flex-col justify-center items-center text-center px-4">
             <div class="flex flex-col md:flex-row items-center space-x-0 md:space-x-3">
                 <h1 class="text-4xl md:text-9xl font-bold mb-4 title-font main-title">Moodyyy</h1>
@@ -136,8 +135,7 @@
                     START
                 </a>
                 <a href="#"
-                    class="px-8 py-3 border-2 border-white text-white text-lg font-medium rounded-lg shadow-md transition-all hover:bg-white hover:text-black text-center"
-                    id="moody--desc">
+                    class="px-8 py-3 border-2 border-white text-white text-lg font-medium rounded-lg shadow-md transition-all hover:bg-white hover:text-black text-center">
                     What is Moodyyy?
                 </a>
             </div>
@@ -145,7 +143,7 @@
     </section>
 
     <!-- Second Section -->
-    <section class="h-screen flex items-center justify-center px-6 md:px-16" id="section--2">
+    <section class="h-screen flex items-center justify-center px-6 md:px-16">
         <div class="max-w-7xl min-h-[40rem] w-full flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-40"
             style="max-width: 93rem; max-height: 64rem;">
             <!-- Left Side: Box with Title & Description -->
@@ -174,25 +172,10 @@
     <!-- Footer -->
     <footer class="bg-gray-800 p-6 mt-12 text-center">
         <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-12 text-gray-400">
-            <a href="about.html" class="hover:text-gray-400 normal-font">ABOUT</a>
-            <!-- <span>About</span> -->
-            <a href="creator.html" class="hover:text-gray-400 normal-font">CREATORS</a>
-            <!-- <span>Creators</span> -->
+            <span>About</span>
+            <span>Creators</span>
         </div>
     </footer>
-
-    <script>
-
-        const section1 = document.getElementById('section--1');
-        const section2 = document.getElementById('section--2');
-        const btnMoodyDesc = document.getElementById('moody--desc');
-
-        btnMoodyDesc.addEventListener('click', function () {
-            section2.scrollIntoView({ behavior: 'smooth' })
-        })
-
-
-    </script>
 </body>
 
 </html>

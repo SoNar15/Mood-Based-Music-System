@@ -37,27 +37,28 @@ router.post("/set-ip", (req, res) => {
 // Stream route
 router.get("/esp-stream", (req, res) => {
   if (!currentIP) return res.status(400).send("IP not set");
+  res.redirect(`http://${currentIP}:81/stream`);
 
-  const options = {
-    hostname: currentIP,
-    port: 81,
-    path: "/stream",
-    method: "GET",
-  };
+  // const options = {
+  //   hostname: currentIP,
+  //   port: 81,
+  //   path: "/stream",
+  //   method: "GET",
+  // };
 
-  const proxy = http.request(options, (streamRes) => {
-    res.writeHead(streamRes.statusCode, streamRes.headers);
-    pipeline(streamRes, res, (err) => {
-      if (err) console.error("Pipeline error:", err.message);
-    });
-  });
+  // const proxy = http.request(options, (streamRes) => {
+  //   res.writeHead(streamRes.statusCode, streamRes.headers);
+  //   pipeline(streamRes, res, (err) => {
+  //     if (err) console.error("Pipeline error:", err.message);
+  //   });
+  // });
 
-  proxy.on("error", (err) => {
-    console.error("Stream error:", err.message);
-    res.status(500).send("Stream error");
-  });
+  // proxy.on("error", (err) => {
+  //   console.error("Stream error:", err.message);
+  //   res.status(500).send("Stream error");
+  // });
 
-  proxy.end();
+  // proxy.end();
 });
 
 // Capture image from ESP
