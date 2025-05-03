@@ -3,7 +3,9 @@
 **Mood Based Music Recommendation System** is an AI-powered music recommendation system that tunes into emotions using computer vision. By analyzing facial expressions through real-time image capture, the system detects the user's mood and plays music accordingly. It offers a seamless experience by integrating a camera module (ESP32-CAM) and machine learning for emotion detection.
 
 ---
+
 Note: This project was originally developed in collaboration on a teammate’s repository. I’ve forked it here to showcase my contributions and make it easily accessible for review.
+
 ---
 
 ## Table of Contents
