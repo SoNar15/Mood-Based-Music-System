@@ -157,4 +157,4 @@ Contributions are welcome! Feel free to fork the project, create a branch, and s
 
 - **FER2013 Dataset**: Used for training the emotion detection model.
 - **ESP32-CAM**: For capturing images to detect emotions.
-- **TensorFlow & Keras**: For the deep learning model used for emotion detection.
+- **TensorFlow & Keras**: For the deep learning model used for emotion detection
