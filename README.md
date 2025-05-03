@@ -69,7 +69,15 @@ This project combines **computer vision** and **AI** to recommend music based on
 ---
 
 ## Demonstration 
+System Walkthrough
+![MOODYYY (1)](https://github.com/user-attachments/assets/03db4f90-a5cb-4bb0-aa51-3afc1748e323)
 
+
+Mood - Happy
+![happy](https://github.com/user-attachments/assets/12335488-709f-422a-9ed6-1a3a560dbc27)
+
+Mood - Neutral
+![neutral](https://github.com/user-attachments/assets/f00f1d3d-33be-47e8-bf63-7c1896fa7371)
 
 ## Installation
 
